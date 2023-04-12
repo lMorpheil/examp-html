@@ -1,0 +1,26 @@
+{% load core_tags core_filters %}
+
+<section class="about" data-js-scroll-target="about">
+    <div class="row">
+        <div class="about__grid">
+            {% chunk 'about.list' %}
+            <div class="about__quote">
+                {% chunk 'about.quote' %}
+            </div>
+            <div class="about__doctor-wrapper">
+                <div class="about__doctor-image">
+                    {% img_tag 'm-about-doctor.png' width=600 height=665 %}
+                </div>
+                <div class="about__doctor-info">
+                    {% chunk 'about.doctor_id' raw=True as id %}
+                    <div class="about__doctor-name">{% chunk "employees.list."|concat:id|concat:".fio_about" %}</div>
+                    <div class="about__doctor-prof">{% chunk "employees.list."|concat:id|concat:".profession_about" %}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if is_content_manager %}
+        {% include "common/blocks/chunk-panel/allon4_einstein__blank__sinergium__ru/m-about/chunk-panel.html" %}
+    {% endif %}
+</section>

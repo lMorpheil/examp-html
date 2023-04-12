@@ -1,0 +1,246 @@
+.about {
+  position: relative;
+  padding-top: 120px;
+  background-color: $bg;
+  overflow: hidden;
+}
+
+.about__grid {
+  display: grid;
+  position: relative;
+  grid-template-areas: 'about__list about__doctor'
+                        'about__quote about__doctor';
+}
+
+.about__list {
+  grid-area: about__list;
+  display: grid;
+  grid-template-columns: repeat(2, 370px);
+  column-gap: 35px;
+  row-gap: 20px;
+  margin-bottom: 100px;
+}
+
+.about__list-image {
+  margin-bottom: 20px;
+}
+
+.about__list-text {
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+}
+
+.about__doctor-wrapper {
+  grid-area: about__doctor;
+  position: absolute;
+  right: -25px;
+  bottom: 0;
+  width: 600px;
+  height: 665px;
+}
+
+.about__quote {
+  @include font($font_semiBold);
+  grid-area: about__quote;
+  background-color: $white;
+  padding: 50px 175px 53px 65px;
+  color: $text_color_accent;
+  font-size: 30px;
+  line-height: 46px;
+  max-width: 920px;
+
+  .decor-wave {
+    position: relative;
+    color: $second_color;
+    white-space: nowrap;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url("~img/wave-line.svg");
+      width: 100%;
+      height: 8px;
+      bottom: -8px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.about__doctor-info {
+  position: absolute;
+  top: 166px;
+  right: 51px;
+  max-width: 180px;
+}
+
+.about__doctor-name {
+  @include font($font_bold);
+  margin-bottom: 5px;
+}
+
+.about__doctor-prof {
+  color: $text_color_accent;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 1390px) {
+
+  .about__doctor-wrapper {
+    width: 530px;
+    height: 589px;
+  }
+
+  .about__doctor-info {
+    top: 150px;
+    right: 40px;
+  }
+}
+
+@include laptop {
+
+  .about {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .about__grid {
+    max-width: 1023px;
+  }
+
+  .about__list {
+    margin-bottom: 114px;
+    grid-template-columns: repeat(2, 360px);
+    column-gap: 40px;
+  }
+
+  .about__list-text {
+    font-size: 18px;
+  }
+
+  .about__doctor-wrapper {
+    width: 507px;
+    height: 561px;
+    bottom: -193px;
+    right: -85px;
+  }
+
+  .about__quote {
+    padding: 52px 237px 66px 56px;
+    max-width: 773px;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+
+  .about__doctor-info {
+    top: unset;
+    right: unset;
+    left: -105px;
+    bottom: 217px;
+  }
+  .about__doctor-prof {
+    margin-left: 7px;
+  }
+}
+
+@include tablet {
+
+  .about {
+    padding-top: 70px;
+    padding-bottom: 72px;
+  }
+
+  .about__grid {
+    max-width: 726px;
+  }
+
+  .about__list-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .about__list {
+    margin-bottom: 92px;
+    grid-template-columns: repeat(2, 348px);
+    row-gap: 38px;
+    column-gap: 30px;
+  }
+  .about__list-image {
+    margin-bottom: 23px;
+  }
+
+  .about__quote {
+    font-size: 24px;
+    line-height: 36px;
+    padding: 45px 93px 63px 33px;
+    max-width: 599px;
+  }
+
+  .about__doctor-wrapper {
+    width: 407px;
+    height: 451px;
+    bottom: -156px;
+    right: -78px;
+  }
+
+  .about__doctor-info {
+    left: -110px;
+    bottom: 181px;
+  }
+
+  .about__doctor-name {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .about__doctor-prof {
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 0;
+  }
+}
+
+@include mobile {
+
+  .about {
+    padding-top: 25px;
+    padding-bottom: 75px;
+  }
+
+  .about__grid {
+    margin-left: -15px;
+    margin-right: -15px;
+    grid-template-areas: "about__list"
+                         "about__quote ";
+  }
+
+  .about__list {
+    grid-template-columns: repeat(1, 360px);
+    margin-bottom: 50px;
+    row-gap: 45px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about__list-image {
+    margin-bottom: 16px;
+  }
+
+  .about__list-text {
+    padding-left: 16px;
+  }
+
+  .about__doctor-wrapper {
+    display: none;
+  }
+
+  .about__quote {
+    background-color: transparent;
+    color: $text_color;
+    padding: 0 14px 0 16px;
+    font-size: 22px;
+    line-height: 32px;
+  }
+}

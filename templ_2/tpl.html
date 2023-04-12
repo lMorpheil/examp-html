@@ -1,0 +1,13 @@
+{% load core_filters core_tags %}
+
+<section class="artist-video" data-js-scroll-target="fs__screen-video">
+    <div class="row">
+        <div class="artist-video__grid">
+            <div class="artist-video__content">
+                <h2 class="h2">{% chunk "artist_video.title_video" %}</h2>
+                {% chunk "artist_video.sliderr" %}
+                <button class="button show-more__button" data-js="show-more-artist">Смотреть ещё</button>
+            </div>
+        </div>
+    </div>
+</section>
